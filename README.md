@@ -1,6 +1,9 @@
 # Simple-Console-Menu
 A Simple Console Menu for Go
 
+How to install:
+`go install github.com/TheKamboy/Simple-Console-Menu@latest`
+
 # How to use
 
 Creating Selection Menu
