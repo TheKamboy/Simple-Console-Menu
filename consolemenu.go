@@ -7,45 +7,45 @@ import (
 )
 
 type SelectionMenu struct {
-	title              string
-	description        string
-	options            []string
-	showselectedoption bool
-	separatorstyle     string
+	Title              string
+	Description        string
+	Options            []string
+	Showselectedoption bool
+	Separatorstyle     string
 }
 
 type YesNoMenu struct {
-	title          string
-	description    string
-	separatorstyle string
+	Title          string
+	Description    string
+	Separatorstyle string
 }
 
-func (e SelectionMenu) show() (optionselected int) {
+func (e SelectionMenu) show() (Optionselected int) {
 	var input int
 	a := 1
 	i := 0
 	cs := ""
-	if !(e.title == "") {
-		fmt.Println(e.title)
+	if !(e.Title == "") {
+		fmt.Println(e.Title)
 		fmt.Println()
 	}
-	if !(e.description == "") {
-		fmt.Println(e.description)
+	if !(e.Description == "") {
+		fmt.Println(e.Description)
 		fmt.Println()
 	}
-	if e.separatorstyle == "" {
+	if e.Separatorstyle == "" {
 		cs = ">"
 	} else {
-		cs = e.separatorstyle
+		cs = e.Separatorstyle
 	}
-	if e.options != nil {
-		for i < len(e.options) {
-			fmt.Println(a, cs, e.options[i])
+	if e.Options != nil {
+		for i < len(e.Options) {
+			fmt.Println(a, cs, e.Options[i])
 			a++
 			i++
 		}
 	} else {
-		fmt.Println(fmt.Errorf("nothing found in options variable"))
+		fmt.Println(fmt.Errorf("nothing found in Options variable"))
 		os.Exit(1)
 	}
 	fmt.Println()
@@ -59,32 +59,32 @@ func (e SelectionMenu) show() (optionselected int) {
 		fmt.Print(">>")
 		fmt.Scanln(&input)
 	}
-	if e.showselectedoption {
+	if e.Showselectedoption {
 		fmt.Println()
-		fmt.Println("You selected Option", input, "which has the name:", e.options[input-1])
+		fmt.Println("You selected Option", input, "which has the name:", e.Options[input-1])
 	}
-	optionselected = input
+	Optionselected = input
 	return
 }
 
-func (e YesNoMenu) show() (optionselected string) {
+func (e YesNoMenu) show() (Optionselected string) {
 	var input string
 	cs := ""
-	if !(e.title == "") {
-		fmt.Println(e.title)
+	if !(e.Title == "") {
+		fmt.Println(e.Title)
 		fmt.Println()
 	}
-	if !(e.description == "") {
-		fmt.Println(e.description)
+	if !(e.Description == "") {
+		fmt.Println(e.Description)
 		fmt.Println()
 	}
-	if e.separatorstyle == "" {
+	if e.Separatorstyle == "" {
 		cs = "/"
 	} else {
-		cs = e.separatorstyle
+		cs = e.Separatorstyle
 	}
 	text := fmt.Sprintf("y%vn: ", cs)
-	if e.title == "" {
+	if e.Title == "" {
 		fmt.Println()
 	}
 	fmt.Print(text)
@@ -105,6 +105,6 @@ func (e YesNoMenu) show() (optionselected string) {
 		input = strings.ReplaceAll(input, " ", "")
 	}
 
-	optionselected = input
+	Optionselected = input
 	return
 }
