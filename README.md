@@ -5,8 +5,8 @@ A Simple Console Menu for Go
 Here's a [reason why I archived this.](https://github.com/TheKamboy/Simple-Console-Menu/blob/main/UNARCHIVED.md)
 
 # Install
-How to install (may not work):
-`go install github.com/TheKamboy/Simple-Console-Menu@main`
+How to use in a go program:
+`go get github.com/TheKamboy/Simple-Console-Menu@main`
 
 # How to use
 
