@@ -1,6 +1,4 @@
-# DO NOT USE
-I just tested it and it doesn't work.
-I will fix it.
+I updated it.
 
 # Simple-Console-Menu
 A Simple Console Menu for Go
