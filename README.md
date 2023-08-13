@@ -13,17 +13,17 @@ How to use in a go program:
 Creating Selection Menu
 ``` go
 	testsel := SelectionMenu {
-		title: "Test",
-		description: "Test",
-		options: []string{"Test 1", "Test 2", "Test 3"},
-		showselectedoption: true,
-		separatorstyle: ">",
+		Title: "Test",
+		Description: "Test",
+		Options: []string{"Test 1", "Test 2", "Test 3"},
+		Showselectedoption: true,
+		Separatorstyle: ">",
 	}
 ```
 
 How to use the Selection Menu
 ``` go
-i := testsel.show()
+i := testsel.Show()
 ```
 
 The options are marked by numbers. It starts at 1 then goes up the more options you add.
@@ -42,12 +42,12 @@ How to use the YesNo Menu
 
 ``` go
 	testyesno := YesNoMenu {
-		title: "Test",
-		description: "Test",
-		separatorstyle: "/",
+		Title: "Test",
+		Description: "Test",
+		Separatorstyle: "/",
 	}
 
-	i := testyesno.show()
+	i := testyesno.Show()
   
 	if i == "y" {
 		println("Yes")
