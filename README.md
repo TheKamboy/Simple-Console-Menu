@@ -1,7 +1,11 @@
 # Simple-Console-Menu
 A Simple Console Menu for Go
 
-How to install (may be a piece of shit):
+## Unarchived
+Here's a [reason why I archived this.](https://github.com/TheKamboy/Simple-Console-Menu/blob/main/UNARCHIVED.md)
+
+# Install
+How to install (may not work):
 `go install github.com/TheKamboy/Simple-Console-Menu@main`
 
 # How to use
