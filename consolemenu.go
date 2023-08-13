@@ -20,7 +20,7 @@ type YesNoMenu struct {
 	Separatorstyle string
 }
 
-func (e SelectionMenu) show() (Optionselected int) {
+func (e SelectionMenu) Show() (Optionselected int) {
 	var input int
 	a := 1
 	i := 0
@@ -67,7 +67,7 @@ func (e SelectionMenu) show() (Optionselected int) {
 	return
 }
 
-func (e YesNoMenu) show() (Optionselected string) {
+func (e YesNoMenu) Show() (Optionselected string) {
 	var input string
 	cs := ""
 	if !(e.Title == "") {
