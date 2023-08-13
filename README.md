@@ -6,7 +6,7 @@ Here's a [reason why I archived this.](https://github.com/TheKamboy/Simple-Conso
 
 # Install
 How to use in a go program:
-`go get github.com/TheKamboy/Simple-Console-Menu@main`
+`go get github.com/TheKamboy/Simple-Console-Menu`
 
 # How to use
 
