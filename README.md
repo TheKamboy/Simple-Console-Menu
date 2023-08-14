@@ -2,7 +2,7 @@
 A Simple Console Menu for Go
 
 ## Unarchived
-Here's a [reason why I archived this.](https://github.com/TheKamboy/Simple-Console-Menu/blob/main/UNARCHIVED.md)
+Here's a [reason why I unarchived this.](https://github.com/TheKamboy/Simple-Console-Menu/blob/main/UNARCHIVED.md)
 
 # Install
 How to use in a go program:
