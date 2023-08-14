@@ -1,23 +1,27 @@
+// Package
 package consolemenu
 
+// Imports
 import (
 	"fmt"
 	"os"
 	"strings"
 )
 
+// The Selection Menu allows you to make a menu
+// with a couple of options selectable by numbers
 type SelectionMenu struct {
 	Title              string
 	Description        string
 	Options            []string
-	Showselectedoption bool
-	Separatorstyle     string
+	Showselectedoption bool // This is useless
+	Separatorstyle     string // Changes the separator between the number and the option title (default: >)
 }
 
 type YesNoMenu struct {
 	Title          string
 	Description    string
-	Separatorstyle string
+	Separatorstyle string // Changes the separator between the number and the option title (default: >)
 }
 
 func (e SelectionMenu) Show() (Optionselected int) {
