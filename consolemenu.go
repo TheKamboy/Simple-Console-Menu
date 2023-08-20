@@ -154,6 +154,7 @@ func (e MultiSelectionMenu) Show() (Optionselected []string) {
 		fmt.Println(input)
 
 		if input == 0 {
+			fmt.Println("Reconized 0")
 			break
 		}
 
