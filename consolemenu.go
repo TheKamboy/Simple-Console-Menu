@@ -117,7 +117,7 @@ func (e YesNoMenu) Show() (Optionselected string) {
 }
 
 func (e MultiSelectionMenu) Show() (Optionselected []string) {
-	var input int = 2
+	var input int = 0
 	a := 1
 	i := 0
 	cs := ""
