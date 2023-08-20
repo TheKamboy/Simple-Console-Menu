@@ -147,6 +147,7 @@ func (e MultiSelectionMenu) Show() (Optionselected []string) {
 		fmt.Println("Press Enter without any numbers to exit.")
 	}
 	for input != 0 {
+		input = 0
 		fmt.Println()
 		fmt.Print(">>")
 		fmt.Scanln(&input)
