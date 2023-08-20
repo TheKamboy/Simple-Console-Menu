@@ -151,6 +151,7 @@ func (e MultiSelectionMenu) Show() (Optionselected []string) {
 		fmt.Println()
 		fmt.Print(">>")
 		fmt.Scanln(&input)
+		fmt.Println(input)
 
 		if input == 0 {
 			break
