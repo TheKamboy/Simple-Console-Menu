@@ -4,17 +4,26 @@ package consolemenu
 // Imports
 import (
 	"fmt"
-	"os"
 	"strings"
 )
 
 // The Selection Menu allows you to make a menu
 // with a couple of options selectable by numbers
 type SelectionMenu struct {
-	Title              string
-	Description        string
-	Options            []string
-	Separatorstyle     string // Changes the separator between the number and the option title (default: >)
+	Title          string
+	Description    string
+	Options        []string
+	Separatorstyle string // Changes the separator between the number and the option title (default: >)
+}
+
+// The Multi Selection Menu is the Selection Menu
+// But you can select multiple options
+type MultiSelectionMenu struct {
+	Title           string
+	Description     string
+	Options         []string
+	Separatorstyle  string // Changes the separator between the number and the option title (default: >)
+	ShowControlsMSG bool
 }
 
 type YesNoMenu struct {
@@ -48,8 +57,7 @@ func (e SelectionMenu) Show() (Optionselected int) {
 			i++
 		}
 	} else {
-		fmt.Println(fmt.Errorf("nothing found in Options variable"))
-		os.Exit(1)
+		panic("ERROR: \"Options\" cannot be empty!")
 	}
 	fmt.Println()
 	fmt.Print(">>")
@@ -105,5 +113,64 @@ func (e YesNoMenu) Show() (Optionselected string) {
 	}
 
 	Optionselected = input
+	return
+}
+
+func (e MultiSelectionMenu) Show() (Optionselected []string) {
+	var input int = 2
+	a := 1
+	i := 0
+	cs := ""
+	if !(e.Title == "") {
+		fmt.Println(e.Title)
+		fmt.Println()
+	}
+	if !(e.Description == "") {
+		fmt.Println(e.Description)
+		fmt.Println()
+	}
+	if e.Separatorstyle == "" {
+		cs = ">"
+	} else {
+		cs = e.Separatorstyle
+	}
+	if e.Options != nil {
+		for i < len(e.Options) {
+			fmt.Println(a, cs, e.Options[i])
+			a++
+			i++
+		}
+	} else {
+		panic("ERROR: \"Options\" cannot be empty!")
+	}
+	if e.ShowControlsMSG {
+		fmt.Println("Press Enter without any numbers to exit.")
+	}
+	for input != 0 {
+		fmt.Println()
+		fmt.Print(">>")
+		fmt.Scanln(&input)
+		if input > a-1 {
+			warning := fmt.Sprintf("\"%v\" is not an option.", input)
+			fmt.Println()
+			fmt.Println(warning)
+		} else {
+			hasitem := false
+			for f := 0; f < len(e.Options); f++ {
+				if e.Options[f] == e.Options[input-1] {
+					fmt.Println("You already have that selected!")
+					hasitem = true
+					break
+				}
+			}
+
+			if !(hasitem) {
+				op := Optionselected
+				Optionselected = []string{}
+				Optionselected = append(op, e.Options[input-1])
+			}
+		}
+	}
+	Optionselected = []string{e.Options[input-1]}
 	return
 }
