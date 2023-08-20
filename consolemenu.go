@@ -151,7 +151,6 @@ func (e MultiSelectionMenu) Show() (Optionselected []string) {
 		fmt.Println()
 		fmt.Print(">>")
 		fmt.Scanln(&input)
-		fmt.Println(input)
 
 		if input > a-1 {
 			warning := fmt.Sprintf("\"%v\" is not an option.", input)
