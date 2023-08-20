@@ -146,7 +146,7 @@ func (e MultiSelectionMenu) Show() (Optionselected []string) {
 	if e.ShowControlsMSG {
 		fmt.Println("Press Enter without any numbers to exit.")
 	}
-	for input != 0 {
+	for {
 		input = 0
 		fmt.Println()
 		fmt.Print(">>")
@@ -163,8 +163,11 @@ func (e MultiSelectionMenu) Show() (Optionselected []string) {
 		} else {
 			hasitem := false
 			for f := 0; f < len(e.Options); f++ {
+				println("In FOR LOOP")
 				if Optionselected != nil {
+					println("first if")
 					if !(f >= len(Optionselected)) {
+						println("second if")
 						if Optionselected[f] == e.Options[input-1] {
 							fmt.Println("You already have that selected!")
 							hasitem = true
