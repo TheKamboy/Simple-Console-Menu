@@ -180,9 +180,11 @@ func (e MultiSelectionMenu) Show() (Optionselected []string) {
 			}
 
 			if !(hasitem) {
-				op := Optionselected
-				Optionselected = []string{}
-				Optionselected = append(op, e.Options[input-1])
+				if input != 0 {
+					op := Optionselected
+					Optionselected = []string{}
+					Optionselected = append(op, e.Options[input-1])
+				}
 			}
 		}
 	}
