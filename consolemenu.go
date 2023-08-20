@@ -146,17 +146,12 @@ func (e MultiSelectionMenu) Show() (Optionselected []string) {
 	if e.ShowControlsMSG {
 		fmt.Println("Press Enter without any numbers to exit.")
 	}
-	for {
+	for input != 0 {
 		input = 0
 		fmt.Println()
 		fmt.Print(">>")
 		fmt.Scanln(&input)
 		fmt.Println(input)
-
-		if input == 0 {
-			fmt.Println("Reconized 0")
-			break
-		}
 
 		if input > a-1 || input < 1 {
 			warning := fmt.Sprintf("\"%v\" is not an option.", input)
