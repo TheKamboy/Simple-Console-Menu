@@ -14,7 +14,6 @@ type SelectionMenu struct {
 	Title              string
 	Description        string
 	Options            []string
-	Showselectedoption bool // This is useless
 	Separatorstyle     string // Changes the separator between the number and the option title (default: >)
 }
 
@@ -62,10 +61,6 @@ func (e SelectionMenu) Show() (Optionselected int) {
 		fmt.Println()
 		fmt.Print(">>")
 		fmt.Scanln(&input)
-	}
-	if e.Showselectedoption {
-		fmt.Println()
-		fmt.Println("You selected Option", input, "which has the name:", e.Options[input-1])
 	}
 	Optionselected = input
 	return
