@@ -153,18 +153,15 @@ func (e MultiSelectionMenu) Show() (Optionselected []string) {
 		fmt.Scanln(&input)
 		fmt.Println(input)
 
-		if input > a-1 || input < 1 {
+		if input > a-1 {
 			warning := fmt.Sprintf("\"%v\" is not an option.", input)
 			fmt.Println()
 			fmt.Println(warning)
 		} else {
 			hasitem := false
 			for f := 0; f < len(e.Options); f++ {
-				println("In FOR LOOP")
 				if Optionselected != nil {
-					println("first if")
 					if !(f >= len(Optionselected)) {
-						println("second if")
 						if Optionselected[f] == e.Options[input-1] {
 							fmt.Println("You already have that selected!")
 							hasitem = true
