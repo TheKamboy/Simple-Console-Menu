@@ -163,7 +163,7 @@ func (e MultiSelectionMenu) Show() (Optionselected []string) {
 			hasitem := false
 			for f := 0; f < len(e.Options); f++ {
 				if Optionselected != nil {
-					if f >= len(Optionselected) {
+					if !(f >= len(Optionselected)) {
 						if Optionselected[f] == e.Options[input-1] {
 							fmt.Println("You already have that selected!")
 							hasitem = true
